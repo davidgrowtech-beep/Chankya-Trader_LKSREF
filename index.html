@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Trading Learning Community | फ्री ट्रेडिंग लर्निंग कम्युनिटी</title>
+<meta name="description" content="Join our free Telegram trading learning community. फ्री मार्केट एनालिसिस, ट्रेड सेटअप और स्ट्रैटेजी सीखें।">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="dns-prefetch" href="https://www.facebook.com">
+
+<!-- Meta Pixel Code (PageView turant nahi, sirf qualified visitor par - neeche script me) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1449373480402548');
+</script>
+<!-- End Meta Pixel Code -->
+
+<style>
+  :root{
+    --gold:#d4af37;--gold-light:#f4e5b2;--dark:#0b0d12;--dark2:#12151c;
+    --card:#161a22;--text:#f2f2f2;--muted:#a9adb8;--green:#25D366;--red:#ff5d5d;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{
+    background:var(--dark);color:var(--text);
+    font-family:'Segoe UI',Roboto,-apple-system,BlinkMacSystemFont,sans-serif;
+    overflow-x:hidden;scroll-behavior:smooth;
+  }
+  body{
+    background:
+      radial-gradient(circle at 20% 0%, rgba(212,175,55,0.12), transparent 45%),
+      radial-gradient(circle at 90% 20%, rgba(212,175,55,0.08), transparent 40%),
+      var(--dark);
+    min-height:100vh;
+  }
+  .wrap{max-width:520px;margin:0 auto;padding:0 18px 40px;position:relative;}
+
+  .topbar{display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0 10px;}
+  .topbar .live-dot{width:8px;height:8px;border-radius:50%;background:var(--green);
+    box-shadow:0 0 0 0 rgba(37,211,102,.6);animation:pulse 1.6s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}
+    70%{box-shadow:0 0 0 8px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+  }
+  .topbar span{font-size:12.5px;color:var(--muted);letter-spacing:.3px;}
+
+  .hero{text-align:center;padding:10px 0 6px;animation:fadeUp .7s ease both;}
+  .logo-ring{
+    width:132px;height:132px;border-radius:50%;margin:0 auto 16px;padding:4px;
+    background:conic-gradient(from 0deg, var(--gold), #fff6d8, var(--gold), #7a5c17, var(--gold));
+    animation:spin 6s linear infinite;
+  }
+  .logo-ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;
+    border:3px solid var(--dark);display:block;background:#222;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  .badge-verified{
+    display:inline-flex;align-items:center;gap:5px;
+    background:rgba(212,175,55,.12);border:1px solid rgba(212,175,55,.4);
+    color:var(--gold-light);font-size:11.5px;font-weight:600;
+    padding:5px 12px;border-radius:20px;margin-bottom:12px;letter-spacing:.3px;
+  }
+  h1{
+    font-size:26px;line-height:1.28;font-weight:800;
+    background:linear-gradient(90deg,#fff, var(--gold-light) 60%, var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px;
+  }
+  h1 span{display:block;font-size:15px;font-weight:500;color:var(--muted);
+    -webkit-text-fill-color:var(--muted);margin-top:6px;}
+
+  /* ===== Gate form ===== */
+  .gate{
+    background:var(--card);border:1px solid rgba(212,175,55,.35);
+    border-radius:18px;padding:16px 14px 14px;margin:18px 0 8px;
+  }
+  .gate-title{font-size:13.5px;font-weight:700;color:var(--gold-light);text-align:center;margin-bottom:12px;}
+  .gate-row{display:flex;gap:10px;}
+  .field{flex:1;min-width:0;}
+  .field.age{flex:1;}
+  .field label{display:block;font-size:11px;color:var(--muted);margin:0 0 5px 3px;}
+  .field input{
+    width:100%;padding:13px 12px;font-size:16px;color:#fff;
+    background:var(--dark2);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;outline:none;
+    transition:border-color .15s;
+  }
+  .field input:focus{border-color:var(--gold);}
+  .field.bad input{border-color:var(--red);animation:shake .35s;}
+  @keyframes shake{25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
+  .gate-err{display:none;color:var(--red);font-size:12px;text-align:center;margin-top:10px;}
+  .gate-err.show{display:block;}
+
+  .cta-block{margin:14px 0 10px;}
+  .cta-btn{
+    position:relative;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;gap:10px;
+    width:100%;padding:19px 18px;border:none;border-radius:18px;cursor:pointer;
+    text-decoration:none;color:#fff;font-size:18.5px;font-weight:900;letter-spacing:.3px;
+    text-shadow:0 1px 3px rgba(0,0,0,.45);
+    background:linear-gradient(110deg,#00c6ff,#0072ff,#7b2ff7,#ff2d95,#ff9a00,#25D366,#00c6ff);
+    background-size:300% 100%;
+    box-shadow:0 10px 30px rgba(255,45,149,.35),0 0 0 2px rgba(255,255,255,.35) inset;
+    animation:btnFlow 5s linear infinite, btnPulse 1.5s ease-in-out infinite;
+    transition:transform .15s ease;
+  }
+  .cta-btn:active{transform:scale(.96);}
+  .cta-btn::before{
+    content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);
+    transform:skewX(-20deg);animation:btnShine 2.6s ease-in-out infinite;
+  }
+  .cta-btn svg{width:26px;height:26px;flex-shrink:0;position:relative;}
+  .cta-txt{position:relative;}
+  .cta-arrow{position:relative;font-size:22px;animation:btnArrow .9s ease-in-out infinite;}
+  .cta-free{
+    position:absolute;top:-1px;right:12px;background:#fff;color:#e11d74;
+    font-size:10px;font-weight:900;padding:3px 9px;border-radius:0 0 9px 9px;
+    text-shadow:none;letter-spacing:.6px;
+  }
+  @keyframes btnFlow{to{background-position:300% 0;}}
+  @keyframes btnPulse{
+    0%,100%{transform:scale(1);box-shadow:0 10px 30px rgba(255,45,149,.35),0 0 0 0 rgba(255,255,255,.5);}
+    50%{transform:scale(1.035);box-shadow:0 14px 42px rgba(0,198,255,.6),0 0 0 10px rgba(255,255,255,0);}
+  }
+  @keyframes btnShine{0%{left:-80%;}60%,100%{left:140%;}}
+  @keyframes btnArrow{0%,100%{transform:translateX(0);}50%{transform:translateX(7px);}}
+  @media (prefers-reduced-motion:reduce){.cta-btn,.cta-btn::before,.cta-arrow,.logo-ring{animation:none;}}
+
+  .inapp-notice{
+    background:rgba(255,193,7,.12);border:1px solid rgba(255,193,7,.4);
+    color:#ffe9a8;font-size:12px;line-height:1.5;border-radius:12px;
+    padding:10px 12px;margin:14px 0;text-align:center;
+  }
+  .cta-sub{text-align:center;font-size:11.5px;color:var(--muted);margin-top:12px;}
+  .cta-sub b{color:var(--gold-light);}
+
+  .stats-row{display:flex;justify-content:center;gap:10px;margin:18px 0 6px;flex-wrap:wrap;}
+  .stat{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:12px;
+    padding:10px 14px;min-width:88px;text-align:center;}
+  .stat b{display:block;font-size:17px;color:var(--gold-light);}
+  .stat span{font-size:10.5px;color:var(--muted);}
+
+  .section-title{font-size:13px;text-transform:uppercase;letter-spacing:1.2px;
+    color:var(--gold);font-weight:700;margin:30px 0 14px;text-align:center;}
+  .feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .feature{background:var(--card);border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;padding:16px 14px;text-align:left;}
+  .feature .ic{font-size:22px;margin-bottom:8px;display:block;}
+  .feature h3{font-size:13.5px;font-weight:700;margin-bottom:4px;color:#fff;}
+  .feature p{font-size:11.5px;color:var(--muted);line-height:1.4;}
+
+  .testi{background:var(--card);border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;padding:16px;margin-bottom:12px;}
+  .testi .stars{color:var(--gold);font-size:13px;margin-bottom:6px;}
+  .testi p{font-size:13px;color:#dcdcdc;line-height:1.5;margin-bottom:8px;}
+  .testi .name{font-size:11.5px;color:var(--muted);font-weight:600;}
+
+  .countdown-strip{display:flex;align-items:center;justify-content:center;gap:8px;
+    background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);
+    border-radius:12px;padding:10px;margin:18px 0;font-size:12.5px;color:var(--gold-light);}
+
+  footer{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);}
+  footer p{font-size:11px;color:#5c6270;line-height:1.6;}
+  footer a{color:var(--gold);text-decoration:none;font-weight:600;}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+  .fadein{animation:fadeUp .6s ease both;}
+
+  /* ===== Step 2 screen: Telegram me REQUEST dabana hai ===== */
+  .bridge{
+    display:none;position:fixed;inset:0;z-index:100;background:rgba(7,9,13,.97);
+    align-items:center;justify-content:center;padding:22px;overflow-y:auto;
+  }
+  .bridge.show{display:flex;}
+  .bridge-card{
+    width:100%;max-width:420px;text-align:center;background:var(--card);
+    border:1px solid rgba(212,175,55,.4);border-radius:20px;padding:26px 20px;
+  }
+  .bridge-card h2{font-size:21px;font-weight:800;color:var(--gold-light);margin-bottom:6px;}
+  .bridge-card .sub{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.5;}
+  .steps{text-align:left;margin:0 0 20px;}
+  .step{display:flex;gap:12px;align-items:flex-start;background:var(--dark2);
+    border-radius:12px;padding:12px;margin-bottom:9px;font-size:13.5px;line-height:1.45;}
+  .step i{flex:0 0 26px;height:26px;border-radius:50%;background:var(--gold);color:#111;
+    font-style:normal;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;}
+  .step.key{border:1.5px solid var(--green);}
+  .bridge .open-btn{
+    display:block;width:100%;padding:16px;border-radius:14px;background:var(--green);color:#fff;
+    font-size:16.5px;font-weight:800;text-decoration:none;
+  }
+  .bridge .close{margin-top:14px;background:none;border:none;color:#6f7482;font-size:12px;cursor:pointer;}
+  .cta-txt{display:flex;flex-direction:column;align-items:center;line-height:1.2;}
+  .cta-txt small{font-size:12.5px;font-weight:700;opacity:.95;margin-top:2px;}
+  .bi{display:block;font-size:.86em;color:var(--muted);font-weight:500;margin-top:2px;}
+  .how{display:flex;flex-direction:column;gap:10px;}
+  .how .st{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:13px;font-size:13.5px;line-height:1.4;}
+  .how .st i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#111;font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;}
+  .logo-ring img{object-position:center 30%;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="topbar"><div class="live-dot"></div><span>Free Telegram Community • फ्री टेलीग्राम कम्युनिटी</span></div>
+
+  <div class="hero">
+    <div class="logo-ring"><img src="cn.jpg" width="124" height="124" fetchpriority="high" alt="Trading Community"></div>
+    <div class="badge-verified">✔ Free Learning Community</div>
+    <h1>Free Trading Learning Community
+      <span>फ्री मार्केट एनालिसिस, ट्रेड सेटअप और स्ट्रैटेजी — सीधे आपके Telegram पर।
+      <em class="bi" style="font-style:normal">Free market analysis, trade setups &amp; strategy — straight to your Telegram.</em></span>
+    </h1>
+  </div>
+
+  <div id="inAppNotice" class="inapp-notice" style="display:none;">
+    ⚠️ आप ऐप ब्राउज़र में हैं। Telegram सही से खोलने के लिए ऊपर <b><span id="inAppMenuHint">⋮</span></b> दबाकर <b>"Open in Browser"</b> चुनें, फिर दोबारा Join दबाएं।<br>
+    You're inside an app browser. Tap the menu above, choose "Open in Browser", then tap Join again.
+  </div>
+
+  <!-- STEP 1: age bharo, tabhi button kaam karega -->
+  <div class="gate" id="gate">
+    <div class="gate-title">फ्री एक्सेस के लिए अपनी उम्र डालें<span class="bi">Enter your age to get free access</span></div>
+    <div class="gate-row">
+      <div class="field age" id="fAge">
+        <label for="inAge">आपकी उम्र / Your Age</label>
+        <input id="inAge" type="tel" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="उम्र / Age (18+)">
+      </div>
+    </div>
+    <div class="gate-err" id="gateErr">कृपया सही उम्र (18+) डालें।<br>Please enter a valid age (18+).</div>
+
+    <div class="cta-block">
+      <a class="cta-btn" id="joinBtn" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">
+        <span class="cta-free">FREE</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
+        <span class="cta-txt">Join Free on Telegram<small>फ्री में Telegram जॉइन करें</small></span>
+        <span class="cta-arrow">➜</span>
+      </a>
+      <p class="cta-sub">👆 उम्र डालें और जॉइन करें • <b>100% Free</b></p>
+    </div>
+  </div>
+
+  <div class="stats-row fadein">
+    <div class="stat"><b>Daily</b><span>Updates • रोज़ाना</span></div>
+    <div class="stat"><b>100%</b><span>Free • फ्री</span></div>
+    <div class="stat"><b>Learn</b><span>Strategy • सीखें</span></div>
+  </div>
+
+  <div class="section-title">आपको क्या मिलेगा / What You Get</div>
+  <div class="feature-grid">
+    <div class="feature"><span class="ic">📊</span><h3>Market Updates</h3><p>रोज़ाना मार्केट एनालिसिस और सेटअप।<br>Daily market analysis &amp; setups.</p></div>
+    <div class="feature"><span class="ic">🎯</span><h3>Risk-First Approach</h3><p>एंट्री, टारगेट और स्टॉप-लॉस की समझ।<br>Entry, target &amp; stop-loss logic.</p></div>
+    <div class="feature"><span class="ic">📚</span><h3>Learn the "Why"</h3><p>सिर्फ़ टिप्स नहीं, कारण भी समझें।<br>Understand the reasoning, not just tips.</p></div>
+    <div class="feature"><span class="ic">🔒</span><h3>100% Free Access</h3><p>कोई फीस नहीं, आज ही जुड़ें।<br>No fees. Join and start learning.</p></div>
+  </div>
+
+  <div class="section-title">कैसे जुड़ें / How to Join</div>
+  <div class="how">
+    <div class="st"><i>1</i><div>अपनी उम्र डालें और Join बटन दबाएं।<br><span style="color:var(--muted)">Enter your age and tap Join.</span></div></div>
+    <div class="st"><i>2</i><div>Telegram में <b>"Request to Join"</b> दबाएं।<br><span style="color:var(--muted)">Tap "Request to Join" in Telegram.</span></div></div>
+    <div class="st"><i>3</i><div>अप्रूवल के बाद रोज़ाना अपडेट पाएं।<br><span style="color:var(--muted)">Get daily updates once approved.</span></div></div>
+  </div>
+
+  <div class="cta-block" style="margin-top:22px;">
+    <a class="cta-btn" id="joinBtn2" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">
+        <span class="cta-free">FREE</span>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
+        <span class="cta-txt">Join Community Now<small>अभी जॉइन करें</small></span>
+        <span class="cta-arrow">➜</span>
+      </a>
+  </div>
+
+  <footer>
+    <p>यह चैनल केवल शैक्षणिक उद्देश्य के लिए है। यह SEBI-रजिस्टर्ड निवेश सलाह नहीं है। ट्रेडिंग में जोखिम होता है, अपना रिसर्च ज़रूर करें।<br>
+    This channel is for educational purposes only. Not SEBI-registered investment advice. Trading involves risk — please do your own research.</p>
+    <p style="margin-top:10px;">Ad by: <a href="https://t.me/srsagency" target="_blank" rel="noopener">SRS Marketing Agency</a></p>
+  </footer>
+</div>
+
+<!-- STEP 2 -->
+<div class="bridge" id="bridge" role="dialog" aria-live="polite">
+  <div class="bridge-card">
+    <h2>बस एक आख़िरी स्टेप! ✅<span class="bi">Almost done!</span></h2>
+    <p class="sub">Telegram खुल रहा है।<br>Telegram is opening.</p>
+    <div class="steps">
+      <div class="step"><i>1</i><div>Telegram में चैनल खुलेगा।<br><span style="color:var(--muted)">The channel will open in Telegram.</span></div></div>
+      <div class="step key"><i>2</i><div><b>नीचे "Request to Join" / "Join Channel" दबाएं।</b><br><span style="color:var(--muted)">Tap "Request to Join" at the bottom.</span></div></div>
+      <div class="step"><i>3</i><div>अप्रूव होते ही अपडेट मिलने लगेंगे।<br><span style="color:var(--muted)">Updates start once approved.</span></div></div>
+    </div>
+    <a class="open-btn" id="openTg" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">Telegram नहीं खुला? यहां दबाएं<br><span style="font-size:12px;font-weight:600">Not opened? Tap here</span></a>
+    <button class="close" id="bridgeClose" type="button">Close • बंद करें</button>
+  </div>
+</div>
+<script>
+(function(){
+  var INVITE = "23e22XPJYEJjOTU1";                  // sirf yahin invite code badalna hai
+  var TELEGRAM_LINK = "https://t.me/+" + INVITE;
+  var MIN_DWELL_MS = 2000;                           // Lead ke liye kam se kam visible time
+  var QPV_INTERACT_MS = 3000;                        // qualified PageView: interaction + 3s
+  var QPV_FOCUS_MS = 8000;                           // ya bina interaction ke 8s focused
+  var NAV_DELAY_MS = 400;                            // Lead pixel bhejne ka thoda time, phir redirect
+  var DEDUP_KEY = "cn_lead_sent";
+  var DEVICE_KEY = "cn_lead_device";
+  var PV_KEY = "cn_qpv_sent";
+  var DEVICE_COOLDOWN_MS = 12 * 60 * 60 * 1000;
+
+  var ua = navigator.userAgent || "";
+  var isAndroid = /Android/i.test(ua);
+  var isIOS = /iPhone|iPad|iPod/i.test(ua);
+  var isInApp = /FBAN|FBAV|FB_IAB|Instagram|Line\//i.test(ua);
+  var targetHref = TELEGRAM_LINK;
+
+  function looksAutomated(){
+    try {
+      if (navigator.webdriver) return true;
+      if (/HeadlessChrome|PhantomJS|SlimerJS|Selenium|puppeteer|playwright|bot|crawler|spider/i.test(ua)) return true;
+      if (window.callPhantom || window._phantom || window.__nightmare) return true;
+      if (navigator.languages && navigator.languages.length === 0) return true;
+    } catch(e){}
+    return false;
+  }
+
+  // ---- Visible time + real interaction track ----
+  var visibleMs = 0, focusedMs = 0, lastTick = Date.now(), interacted = false, pvSent = false;
+  try { if (sessionStorage.getItem(PV_KEY) === "1") pvSent = true; } catch(e){}
+
+  function onInteract(e){ if (e.isTrusted) interacted = true; }
+  ["touchstart","pointerdown","scroll","keydown","input"].forEach(function(t){
+    window.addEventListener(t, onInteract, {passive:true, capture:true});
+  });
+
+  // ---- Qualified PageView: sirf asli insaan ke liye ----
+  setInterval(function(){
+    var n = Date.now(), d = Math.min(n - lastTick, 500);
+    lastTick = n;
+    if (document.visibilityState === "visible") {
+      visibleMs += d;
+      if (!document.hasFocus || document.hasFocus()) focusedMs += d;
+    }
+    if (!pvSent && !looksAutomated() &&
+        ((interacted && visibleMs >= QPV_INTERACT_MS) || focusedMs >= QPV_FOCUS_MS)) {
+      pvSent = true;
+      try { sessionStorage.setItem(PV_KEY, "1"); } catch(e){}
+      if (typeof fbq === "function") fbq('track', 'PageView');
+    }
+  }, 250);
+
+  // ---- Asli press detect ----
+  var pressedAt = 0, lastClickAt = 0;
+  function markPress(e){ if (e.isTrusted) pressedAt = Date.now(); }
+
+  function sentThisSession(){ try { return sessionStorage.getItem(DEDUP_KEY) === "1"; } catch(e){ return false; } }
+  function sentFromDevice(){
+    try {
+      var last = parseInt(localStorage.getItem(DEVICE_KEY) || "0", 10);
+      return last && (Date.now() - last) < DEVICE_COOLDOWN_MS;
+    } catch(e){ return false; }
+  }
+  function markSent(){
+    try { sessionStorage.setItem(DEDUP_KEY, "1"); } catch(e){}
+    try { localStorage.setItem(DEVICE_KEY, String(Date.now())); } catch(e){}
+  }
+  function trackLead(){
+    if (typeof fbq === "function") fbq('track', 'Lead', { content_name: 'Free Trading Learning Community', content_category: 'Telegram Join' });
+  }
+  function trackFiltered(reason){
+    if (typeof fbq === "function") fbq('trackCustom', 'FilteredClick', { reason: reason });
+  }
+
+  // ---- Form gate ----
+  var inAge = document.getElementById("inAge");
+  var fAge = document.getElementById("fAge");
+  var gateErr = document.getElementById("gateErr");
+
+  inAge.addEventListener("input", function(){ inAge.value = inAge.value.replace(/\D/g, "").slice(0, 2); });
+  inAge.addEventListener("input", function(){
+    fAge.classList.remove("bad"); gateErr.classList.remove("show");
+  });
+
+  function validate(){
+    var a = parseInt(inAge.value, 10);
+    var ageOk = !isNaN(a) && a >= 18 && a <= 80;
+    fAge.classList.toggle("bad", !ageOk);
+    gateErr.classList.toggle("show", !ageOk);
+    if (!ageOk) inAge.focus();
+    return ageOk;
+  }
+
+  // ---- Step 2 screen ----
+  var bridge = document.getElementById("bridge");
+  document.getElementById("bridgeClose").addEventListener("click", function(){ bridge.classList.remove("show"); });
+
+  function go(){ window.location.href = targetHref; }
+
+  function handleJoin(e){
+    e.preventDefault();
+    if (e.isTrusted === false) return;
+
+    // Age bhare bina Telegram nahi khulega, Lead bhi nahi jayega
+    if (!validate()) {
+      document.getElementById("gate").scrollIntoView({behavior:"smooth", block:"center"});
+      return;
+    }
+
+    var now = Date.now(), reason = "";
+    if (looksAutomated()) reason = "automated";
+    else if (sentThisSession() || sentFromDevice()) reason = "duplicate";
+    else if (lastClickAt && (now - lastClickAt) < 400) reason = "rapid_click";
+    else if (!pressedAt || (now - pressedAt) > 5000) reason = "no_real_press";
+    else if (visibleMs < MIN_DWELL_MS) reason = "low_dwell";
+    lastClickAt = now;
+
+    if (reason) { trackFiltered(reason); }
+    else { markSent(); trackLead(); }
+
+    document.getElementById("openTg").setAttribute("href", targetHref);
+    bridge.classList.add("show");
+
+    // Lead pixel ko bhejne ka thoda time, phir Telegram
+    setTimeout(go, NAV_DELAY_MS);
+  }
+
+  var btns = [document.getElementById("joinBtn"), document.getElementById("joinBtn2")];
+  btns.forEach(function(b){
+    if (!b) return;
+    ["pointerdown","touchstart","mousedown"].forEach(function(t){ b.addEventListener(t, markPress, {passive:true}); });
+    b.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") markPress(e); });
+    b.addEventListener("click", handleJoin);
+  });
+
+  // ---- In-app browser (Facebook/Instagram) ----
+  if (isInApp) {
+    var notice = document.getElementById("inAppNotice");
+    if (notice) {
+      if (isIOS) document.getElementById("inAppMenuHint").textContent = "•••";
+      notice.style.display = "block";
+    }
+    if (isAndroid) {
+      targetHref = "intent://join?invite=" + INVITE +
+        "#Intent;scheme=tg;package=org.telegram.messenger;" +
+        "S.browser_fallback_url=" + encodeURIComponent(TELEGRAM_LINK) + ";end";
+    }
+  }
+})();
+</script>
+</body>
+</html>
