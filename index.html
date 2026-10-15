@@ -76,28 +76,7 @@ fbq('init', '1579593043349452');
   h1 span{display:block;font-size:15px;font-weight:500;color:var(--muted);
     -webkit-text-fill-color:var(--muted);margin-top:6px;}
 
-  /* ===== Gate form ===== */
-  .gate{
-    background:var(--card);border:1px solid rgba(212,175,55,.35);
-    border-radius:18px;padding:16px 14px 14px;margin:18px 0 8px;
-  }
-  .gate-title{font-size:13.5px;font-weight:700;color:var(--gold-light);text-align:center;margin-bottom:12px;}
-  .gate-row{display:flex;gap:10px;}
-  .field{flex:1;min-width:0;}
-  .field.age{flex:1;}
-  .field label{display:block;font-size:11px;color:var(--muted);margin:0 0 5px 3px;}
-  .field input{
-    width:100%;padding:13px 12px;font-size:16px;color:#fff;
-    background:var(--dark2);border:1.5px solid rgba(255,255,255,.12);border-radius:12px;outline:none;
-    transition:border-color .15s;
-  }
-  .field input:focus{border-color:var(--gold);}
-  .field.bad input{border-color:var(--red);animation:shake .35s;}
-  @keyframes shake{25%{transform:translateX(-5px);}75%{transform:translateX(5px);}}
-  .gate-err{display:none;color:var(--red);font-size:12px;text-align:center;margin-top:10px;}
-  .gate-err.show{display:block;}
-
-  .cta-block{margin:14px 0 10px;}
+  .cta-block{margin:18px 0 10px;}
   .cta-btn{
     position:relative;overflow:hidden;
     display:flex;align-items:center;justify-content:center;gap:10px;
@@ -117,7 +96,6 @@ fbq('init', '1579593043349452');
     transform:skewX(-20deg);animation:btnShine 2.6s ease-in-out infinite;
   }
   .cta-btn svg{width:26px;height:26px;flex-shrink:0;position:relative;}
-  .cta-txt{position:relative;}
   .cta-arrow{position:relative;font-size:22px;animation:btnArrow .9s ease-in-out infinite;}
   .cta-free{
     position:absolute;top:-1px;right:12px;background:#fff;color:#e11d74;
@@ -156,16 +134,6 @@ fbq('init', '1579593043349452');
   .feature h3{font-size:13.5px;font-weight:700;margin-bottom:4px;color:#fff;}
   .feature p{font-size:11.5px;color:var(--muted);line-height:1.4;}
 
-  .testi{background:var(--card);border:1px solid rgba(255,255,255,.06);
-    border-radius:14px;padding:16px;margin-bottom:12px;}
-  .testi .stars{color:var(--gold);font-size:13px;margin-bottom:6px;}
-  .testi p{font-size:13px;color:#dcdcdc;line-height:1.5;margin-bottom:8px;}
-  .testi .name{font-size:11.5px;color:var(--muted);font-weight:600;}
-
-  .countdown-strip{display:flex;align-items:center;justify-content:center;gap:8px;
-    background:rgba(212,175,55,.08);border:1px solid rgba(212,175,55,.3);
-    border-radius:12px;padding:10px;margin:18px 0;font-size:12.5px;color:var(--gold-light);}
-
   footer{text-align:center;margin-top:34px;padding-top:18px;border-top:1px solid rgba(255,255,255,.06);}
   footer p{font-size:11px;color:#5c6270;line-height:1.6;}
   footer a{color:var(--gold);text-decoration:none;font-weight:600;}
@@ -173,7 +141,7 @@ fbq('init', '1579593043349452');
   @keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
   .fadein{animation:fadeUp .6s ease both;}
 
-  /* ===== Step 2 screen: Telegram me REQUEST dabana hai ===== */
+  /* ===== Step 2 screen: confirm karke hi Telegram khulega ===== */
   .bridge{
     display:none;position:fixed;inset:0;z-index:100;background:rgba(7,9,13,.97);
     align-items:center;justify-content:center;padding:22px;overflow-y:auto;
@@ -192,17 +160,19 @@ fbq('init', '1579593043349452');
     font-style:normal;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;}
   .step.key{border:1.5px solid var(--green);}
   .bridge .open-btn{
-    display:block;width:100%;padding:16px;border-radius:14px;background:var(--green);color:#fff;
-    font-size:16.5px;font-weight:800;text-decoration:none;
+    display:block;width:100%;padding:17px;border-radius:14px;background:var(--green);color:#fff;
+    font-size:17px;font-weight:800;text-decoration:none;
   }
   .bridge .close{margin-top:14px;background:none;border:none;color:#6f7482;font-size:12px;cursor:pointer;}
-  .cta-txt{display:flex;flex-direction:column;align-items:center;line-height:1.2;}
+  .cta-txt{position:relative;display:flex;flex-direction:column;align-items:center;line-height:1.2;}
   .cta-txt small{font-size:12.5px;font-weight:700;opacity:.95;margin-top:2px;}
   .bi{display:block;font-size:.86em;color:var(--muted);font-weight:500;margin-top:2px;}
   .how{display:flex;flex-direction:column;gap:10px;}
   .how .st{display:flex;gap:12px;align-items:center;background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:13px;font-size:13.5px;line-height:1.4;}
   .how .st i{flex:0 0 28px;height:28px;border-radius:50%;background:var(--gold);color:#111;font-style:normal;font-weight:800;display:flex;align-items:center;justify-content:center;}
   .logo-ring img{object-position:center 30%;}
+  /* honeypot: insaan ko dikhta nahi, bots click kar dete hain */
+  .hp{position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;overflow:hidden;}
 </style>
 </head>
 <body>
@@ -212,7 +182,7 @@ fbq('init', '1579593043349452');
 
   <div class="hero">
     <div class="logo-ring"><img src="cn.jpg" width="124" height="124" fetchpriority="high" alt="Trading Community"></div>
-    <div class="badge-verified">✔ Free Learning Community</div>
+    <div class="badge-verified">✔ CHANAKYA's Free Learning Community</div>
     <h1>Free Trading Learning Community
       <span>फ्री मार्केट एनालिसिस, ट्रेड सेटअप और स्ट्रैटेजी — सीधे आपके Telegram पर।
       <em class="bi" style="font-style:normal">Free market analysis, trade setups &amp; strategy — straight to your Telegram.</em></span>
@@ -224,26 +194,15 @@ fbq('init', '1579593043349452');
     You're inside an app browser. Tap the menu above, choose "Open in Browser", then tap Join again.
   </div>
 
-  <!-- STEP 1: age bharo, tabhi button kaam karega -->
-  <div class="gate" id="gate">
-    <div class="gate-title">फ्री एक्सेस के लिए अपनी उम्र डालें<span class="bi">Enter your age to get free access</span></div>
-    <div class="gate-row">
-      <div class="field age" id="fAge">
-        <label for="inAge">आपकी उम्र / Your Age</label>
-        <input id="inAge" type="tel" inputmode="numeric" autocomplete="off" maxlength="2" placeholder="उम्र / Age (18+)">
-      </div>
-    </div>
-    <div class="gate-err" id="gateErr">कृपया सही उम्र (18+) डालें।<br>Please enter a valid age (18+).</div>
-
-    <div class="cta-block">
-      <a class="cta-btn" id="joinBtn" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">
-        <span class="cta-free">FREE</span>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
-        <span class="cta-txt">Join Free on Telegram<small>फ्री में Telegram जॉइन करें</small></span>
-        <span class="cta-arrow">➜</span>
-      </a>
-      <p class="cta-sub">👆 उम्र डालें और जॉइन करें • <b>100% Free</b></p>
-    </div>
+  <!-- STEP 1: Join dabao -> confirm screen khulegi (Lead yahan nahi jata) -->
+  <div class="cta-block">
+    <a class="cta-btn" id="joinBtn" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">
+      <span class="cta-free">FREE</span>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
+      <span class="cta-txt">Join Free on Telegram<small>फ्री में Telegram जॉइन करें</small></span>
+      <span class="cta-arrow">➜</span>
+    </a>
+    <p class="cta-sub">👆 बटन दबाएं और जॉइन करें • <b>100% Free</b></p>
   </div>
 
   <div class="stats-row fadein">
@@ -262,49 +221,55 @@ fbq('init', '1579593043349452');
 
   <div class="section-title">कैसे जुड़ें / How to Join</div>
   <div class="how">
-    <div class="st"><i>1</i><div>अपनी उम्र डालें और Join बटन दबाएं।<br><span style="color:var(--muted)">Enter your age and tap Join.</span></div></div>
+    <div class="st"><i>1</i><div>Join बटन दबाएं और "Telegram खोलें" पर टैप करें।<br><span style="color:var(--muted)">Tap Join, then tap "Open Telegram".</span></div></div>
     <div class="st"><i>2</i><div>Telegram में <b>"Request to Join"</b> दबाएं।<br><span style="color:var(--muted)">Tap "Request to Join" in Telegram.</span></div></div>
     <div class="st"><i>3</i><div>अप्रूवल के बाद रोज़ाना अपडेट पाएं।<br><span style="color:var(--muted)">Get daily updates once approved.</span></div></div>
   </div>
 
   <div class="cta-block" style="margin-top:22px;">
     <a class="cta-btn" id="joinBtn2" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">
-        <span class="cta-free">FREE</span>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
-        <span class="cta-txt">Join Community Now<small>अभी जॉइन करें</small></span>
-        <span class="cta-arrow">➜</span>
-      </a>
+      <span class="cta-free">FREE</span>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.99 15.5l-.35 4.93c.5 0 .72-.22.98-.47l2.35-2.24 4.87 3.57c.9.5 1.53.24 1.77-.83L23 4.2c.32-1.28-.46-1.79-1.33-1.47L1.1 10.42c-1.25.5-1.23 1.2-.22 1.5l5.63 1.76L19.9 6.5c.6-.4 1.15-.18.7.24z"/></svg>
+      <span class="cta-txt">Join Community Now<small>अभी जॉइन करें</small></span>
+      <span class="cta-arrow">➜</span>
+    </a>
   </div>
 
+  <!-- honeypot link: sirf bots click karte hain -->
+  <a class="hp" id="hpLink" href="#" tabindex="-1" aria-hidden="true">Join Telegram Free</a>
+
   <footer>
-    <p>यह चैनल केवल शैक्षणिक उद्देश्य के लिए है। यह SEBI-रजिस्टर्ड निवेश सलाह नहीं है। ट्रेडिंग में जोखिम होता है, अपना रिसर्च ज़रूर करें।<br>
-    This channel is for educational purposes only. Not SEBI-registered investment advice. Trading involves risk — please do your own research.</p>
+    <p>यह चैनल केवल शैक्षणिक उद्देश्य के लिए है। यह SEBI-रजिस्टर्ड निवेश सलाह नहीं है। ट्रेडिंग में जोखिम होता है, अपना रिसर्च ज़रूर करें। केवल 18+ के लिए।<br>
+    This channel is for educational purposes only. Not SEBI-registered investment advice. Trading involves risk — please do your own research. 18+ only.</p>
     <p style="margin-top:10px;">Ad by: <a href="https://t.me/srsagency" target="_blank" rel="noopener">SRS Marketing Agency</a></p>
   </footer>
 </div>
 
-<!-- STEP 2 -->
+<!-- STEP 2: confirm screen -->
 <div class="bridge" id="bridge" role="dialog" aria-live="polite">
   <div class="bridge-card">
     <h2>बस एक आख़िरी स्टेप! ✅<span class="bi">Almost done!</span></h2>
-    <p class="sub">Telegram खुल रहा है।<br>Telegram is opening.</p>
+    <p class="sub">नीचे बटन दबाकर Telegram खोलें।<br>Tap the button below to open Telegram.</p>
     <div class="steps">
-      <div class="step"><i>1</i><div>Telegram में चैनल खुलेगा।<br><span style="color:var(--muted)">The channel will open in Telegram.</span></div></div>
-      <div class="step key"><i>2</i><div><b>नीचे "Request to Join" / "Join Channel" दबाएं।</b><br><span style="color:var(--muted)">Tap "Request to Join" at the bottom.</span></div></div>
+      <div class="step"><i>1</i><div>नीचे हरा बटन दबाएं, चैनल खुलेगा।<br><span style="color:var(--muted)">Tap the green button; the channel opens.</span></div></div>
+      <div class="step key"><i>2</i><div><b>Telegram में "Request to Join" / "Join Channel" दबाएं।</b><br><span style="color:var(--muted)">Tap "Request to Join" at the bottom.</span></div></div>
       <div class="step"><i>3</i><div>अप्रूव होते ही अपडेट मिलने लगेंगे।<br><span style="color:var(--muted)">Updates start once approved.</span></div></div>
     </div>
-    <a class="open-btn" id="openTg" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">Telegram नहीं खुला? यहां दबाएं<br><span style="font-size:12px;font-weight:600">Not opened? Tap here</span></a>
+    <a class="open-btn" id="openTg" href="https://t.me/+23e22XPJYEJjOTU1" rel="noopener">Telegram खोलें ➜<br><span style="font-size:12px;font-weight:600">Open Telegram</span></a>
     <button class="close" id="bridgeClose" type="button">Close • बंद करें</button>
   </div>
 </div>
+
 <script>
 (function(){
   var INVITE = "23e22XPJYEJjOTU1";                  // sirf yahin invite code badalna hai
   var TELEGRAM_LINK = "https://t.me/+" + INVITE;
-  var MIN_DWELL_MS = 2000;                           // Lead ke liye kam se kam visible time
+
+  var MIN_DWELL_MS = 3000;                           // Lead ke liye page par kam se kam visible time
+  var MIN_BRIDGE_MS = 1200;                          // confirm screen padhne ka minimum time
   var QPV_INTERACT_MS = 3000;                        // qualified PageView: interaction + 3s
   var QPV_FOCUS_MS = 8000;                           // ya bina interaction ke 8s focused
-  var NAV_DELAY_MS = 400;                            // Lead pixel bhejne ka thoda time, phir redirect
+  var NAV_DELAY_MS = 450;                            // Lead pixel bhejne ka time, phir redirect
   var DEDUP_KEY = "cn_lead_sent";
   var DEVICE_KEY = "cn_lead_device";
   var PV_KEY = "cn_qpv_sent";
@@ -322,18 +287,21 @@ fbq('init', '1579593043349452');
       if (/HeadlessChrome|PhantomJS|SlimerJS|Selenium|puppeteer|playwright|bot|crawler|spider/i.test(ua)) return true;
       if (window.callPhantom || window._phantom || window.__nightmare) return true;
       if (navigator.languages && navigator.languages.length === 0) return true;
+      if (!screen.width || !screen.height) return true;
     } catch(e){}
     return false;
   }
 
   // ---- Visible time + real interaction track ----
   var visibleMs = 0, focusedMs = 0, lastTick = Date.now(), interacted = false, pvSent = false;
+  var scrolled = false, touchedBeforeCta = false, botTrap = false;
   try { if (sessionStorage.getItem(PV_KEY) === "1") pvSent = true; } catch(e){}
 
   function onInteract(e){ if (e.isTrusted) interacted = true; }
   ["touchstart","pointerdown","scroll","keydown","input"].forEach(function(t){
     window.addEventListener(t, onInteract, {passive:true, capture:true});
   });
+  window.addEventListener("scroll", function(e){ if (e.isTrusted) scrolled = true; }, {passive:true});
 
   // ---- Qualified PageView: sirf asli insaan ke liye ----
   setInterval(function(){
@@ -351,8 +319,11 @@ fbq('init', '1579593043349452');
     }
   }, 250);
 
+  // ---- Honeypot ----
+  document.getElementById("hpLink").addEventListener("click", function(e){ e.preventDefault(); botTrap = true; });
+
   // ---- Asli press detect ----
-  var pressedAt = 0, lastClickAt = 0;
+  var pressedAt = 0, lastClickAt = 0, bridgeShownAt = 0, navigating = false;
   function markPress(e){ if (e.isTrusted) pressedAt = Date.now(); }
 
   function sentThisSession(){ try { return sessionStorage.getItem(DEDUP_KEY) === "1"; } catch(e){ return false; } }
@@ -373,66 +344,54 @@ fbq('init', '1579593043349452');
     if (typeof fbq === "function") fbq('trackCustom', 'FilteredClick', { reason: reason });
   }
 
-  // ---- Form gate ----
-  var inAge = document.getElementById("inAge");
-  var fAge = document.getElementById("fAge");
-  var gateErr = document.getElementById("gateErr");
-
-  inAge.addEventListener("input", function(){ inAge.value = inAge.value.replace(/\D/g, "").slice(0, 2); });
-  inAge.addEventListener("input", function(){
-    fAge.classList.remove("bad"); gateErr.classList.remove("show");
-  });
-
-  function validate(){
-    var a = parseInt(inAge.value, 10);
-    var ageOk = !isNaN(a) && a >= 18 && a <= 80;
-    fAge.classList.toggle("bad", !ageOk);
-    gateErr.classList.toggle("show", !ageOk);
-    if (!ageOk) inAge.focus();
-    return ageOk;
-  }
-
-  // ---- Step 2 screen ----
   var bridge = document.getElementById("bridge");
+  var openTg = document.getElementById("openTg");
   document.getElementById("bridgeClose").addEventListener("click", function(){ bridge.classList.remove("show"); });
 
   function go(){ window.location.href = targetHref; }
 
+  // ---- STEP 1: Join dabaya -> sirf confirm screen, koi Lead nahi, koi redirect nahi ----
   function handleJoin(e){
     e.preventDefault();
     if (e.isTrusted === false) return;
+    touchedBeforeCta = interacted;
+    bridgeShownAt = Date.now();
+    openTg.setAttribute("href", targetHref);
+    bridge.classList.add("show");
+  }
 
-    // Age bhare bina Telegram nahi khulega, Lead bhi nahi jayega
-    if (!validate()) {
-      document.getElementById("gate").scrollIntoView({behavior:"smooth", block:"center"});
-      return;
-    }
+  // ---- STEP 2: "Telegram khole" dabaya -> filters pass hue to hi Lead, phir Telegram ----
+  function handleOpen(e){
+    e.preventDefault();
+    if (e.isTrusted === false || navigating) return;
 
     var now = Date.now(), reason = "";
     if (looksAutomated()) reason = "automated";
+    else if (botTrap) reason = "honeypot";
     else if (sentThisSession() || sentFromDevice()) reason = "duplicate";
+    else if (!bridgeShownAt || (now - bridgeShownAt) < MIN_BRIDGE_MS) reason = "too_fast";
     else if (lastClickAt && (now - lastClickAt) < 400) reason = "rapid_click";
     else if (!pressedAt || (now - pressedAt) > 5000) reason = "no_real_press";
     else if (visibleMs < MIN_DWELL_MS) reason = "low_dwell";
+    else if (!touchedBeforeCta) reason = "no_prior_interaction";
     lastClickAt = now;
 
     if (reason) { trackFiltered(reason); }
     else { markSent(); trackLead(); }
 
-    document.getElementById("openTg").setAttribute("href", targetHref);
-    bridge.classList.add("show");
-
-    // Lead pixel ko bhejne ka thoda time, phir Telegram
-    setTimeout(go, NAV_DELAY_MS);
+    navigating = true;
+    setTimeout(function(){ navigating = false; go(); }, NAV_DELAY_MS);
   }
 
-  var btns = [document.getElementById("joinBtn"), document.getElementById("joinBtn2")];
-  btns.forEach(function(b){
+  [document.getElementById("joinBtn"), document.getElementById("joinBtn2")].forEach(function(b){
     if (!b) return;
-    ["pointerdown","touchstart","mousedown"].forEach(function(t){ b.addEventListener(t, markPress, {passive:true}); });
-    b.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") markPress(e); });
     b.addEventListener("click", handleJoin);
   });
+  ["pointerdown","touchstart","mousedown"].forEach(function(t){
+    openTg.addEventListener(t, markPress, {passive:true});
+  });
+  openTg.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " ") markPress(e); });
+  openTg.addEventListener("click", handleOpen);
 
   // ---- In-app browser (Facebook/Instagram) ----
   if (isInApp) {
